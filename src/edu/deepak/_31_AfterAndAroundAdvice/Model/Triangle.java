@@ -24,7 +24,7 @@ public class Triangle {
 	
 	@Loggable
 	public void testMethod(){
-		System.out.println("test method of triangle");
+		System.out.println("\nCustome Annotation Test method of triangle");
 	}
 	
 }

@@ -15,6 +15,8 @@ public class DrawingApp {
 		shapeService.getCircle().getName();
 		// shapeService.getTriangle().setName("Equilateral Triangle");
 		// shapeService.getTriangle().setNameAndReturn("Obtuse Angle Triangle");
+		
+		shapeService.getTriangle().testMethod();
 	}
 
 }
