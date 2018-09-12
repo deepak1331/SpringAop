@@ -12,7 +12,8 @@ public class DrawingApp {
 		ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
 		// shapeService.getCircle().setName("Concentric Circle");
 		// System.out.println(shapeService.getCircle().getName());
-		shapeService.getTriangle().setName("Equilateral Triangle");
+		shapeService.getCircle().getName();
+		// shapeService.getTriangle().setName("Equilateral Triangle");
 		// shapeService.getTriangle().setNameAndReturn("Obtuse Angle Triangle");
 	}
 
