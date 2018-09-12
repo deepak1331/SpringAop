@@ -10,13 +10,18 @@
 		<property name="name" value="Right Angle Triangle" />
 	</bean>
 
-
 	<bean id="circle" class="edu.deepak._28_PointCuts_Wildcard.Model.Circle">
 		<property name="name" value="Circle Name" />
 	</bean>
 
 	<bean id="shapeService" class="edu.deepak._28_PointCuts_Wildcard.Service.ShapeService"
 		autowire="byName" />
-<bean name="loggingAspect" class="edu.deepak._28_PointCuts_Wildcard.Aspect.LoggingAspect"/>
+		
+	<bean name="loggingAspect"
+		class="edu.deepak._28_PointCuts_Wildcard.Aspect.LoggingAspect" />
+		
+	<bean name="securityAspect"
+		class="edu.deepak._28_PointCuts_Wildcard.Aspect.SecurityAspect" />
+		
 	<aop:aspectj-autoproxy />
 </beans>

@@ -7,11 +7,16 @@ import org.aspectj.lang.annotation.Pointcut;
 /*
  * @Aspect annotation makes any class a ASpect class
  * All its member method will be called as advice.
+ * 
+ * Execution -  takes  method as parameters
+ * Within - takes class/packages as parameters 
+ * Args - arguments ur method gonna have for which u want to apply pointcut.
+ 
+ * BestPractice while writing pointcut
+ * Mix n match n combine pointcut expressions 
  */
 @Aspect
 public class LoggingAspect {
-
-	
 	
 	@Pointcut("execution(* get*())")
 	public void allGetters() {
@@ -30,6 +35,21 @@ public class LoggingAspect {
 	public void secondAdvice() {
 		System.out.println("Second Advice ran. Get Method is called.");
 	}
+	
+//	Below pointcut will be applicable for all the method of class Circle
+//	@Pointcut("execution(* * edu.deepak._28_PointCuts_Wildcard.Model.Circle.*(..))")
+//	public void allCircleMethods(){}
+	
+//	Other easy way for this is to use within
+	@Pointcut("within(edu.deepak._28_PointCuts_Wildcard.Model.Circle)")
+	public void allCircleMethodUsingWithin(){}  //We can now use the allCircleMethodUsingWithin  with the @Before / @After
+	
+	@Pointcut("within(edu.deepak._28_PointCuts_Wildcard.Model.*)")
+	public void allClassesInsideModelPackage(){}
+	
+	@Pointcut("within(edu.deepak._28_PointCuts_Wildcard.Model..*)")
+	public void allClassesInsideModelPackageOrSubPackages(){}
+	
 	
 	// Applicable only on Circle class getName()
 	// @Before("execution(public String
